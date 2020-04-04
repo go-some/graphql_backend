@@ -7,16 +7,25 @@
   "author": "songjein<jeinsong200@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/runtime": "^7.9.2",
     "axios": "^0.19.2",
+    "copy": "^0.3.2",
     "graphql-yoga": "^1.18.3",
     "node-fetch": "^2.6.0"
   },
   "scripts": {
-    "start": "nodemon --exec babel-node index.js"
+    "build": "babel index.js -d dist && babel graphql/*js -d dist/graphql",
+    "postbuild": "copy graphql/*.graphql ./dist",
+    "start": "node ./dist/index.js"
   },
   "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.9.0",
     "babel-cli": "^6.26.0",
-    "babel-node": "^0.0.1-security",
+    "babel-node": "0.0.1-security",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-3": "^6.24.1"
   }
