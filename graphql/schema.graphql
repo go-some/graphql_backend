@@ -1,26 +1,12 @@
-type User {
-    id: String!
-    email: String!
-    profileImage: String!
-    nick: String!
+type News {
+    _id: ID!
+    title: String
+    body: String
+    time: String
+    url: String
+    origin: String
+    img: String
 }
-
-type Post {
-	id: String!
-	area: Int!
-	title: String!
-    content: String!
-    imgList: [String]
-    captionList: [String]
-    mainImgIdx: Int!
-    isSecret: Boolean
-    viewCount: Int!
-    UserId: String!
-    BinderId: String
-    createdAt: String!
-    User: User!
-}
-
 type Query {
-	hotPosts(offset: Int!): [Post]
+	news(filter: String!, skip: Int, limit: Int!): [News]
 }

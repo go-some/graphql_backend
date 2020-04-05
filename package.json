@@ -15,11 +15,12 @@
     "axios": "^0.19.2",
     "copy": "^0.3.2",
     "graphql-yoga": "^1.18.3",
+    "mongoose": "^5.9.7",
     "node-fetch": "^2.6.0"
   },
   "scripts": {
-    "build": "babel index.js -d dist && babel graphql/*js -d dist/graphql",
-    "postbuild": "copy graphql/*.graphql ./dist",
+    "build": "babel index.js -d dist && babel graphql/*js -d dist/graphql && babel graphql/models/*.js -d dist/graphql/models",
+    "postbuild": "copy graphql/*.graphql ./dist && copy .env ./dist",
     "start": "node ./dist/index.js"
   },
   "devDependencies": {
