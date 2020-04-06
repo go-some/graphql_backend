@@ -7,6 +7,16 @@ type News {
     origin: String
     img: String
 }
+type JHNews {
+    _id: ID!
+    title: String
+    body: String
+    time: String
+    url: String
+    origin: String
+    img: String
+}
 type Query {
-	news(filter: String!, skip: Int, limit: Int!): [News]
+	news(filter: String!, skip: Int!, limit: Int!): [News]
+	jhnews(filter: String!, skip: Int!, limit: Int!): [JHNews]
 }
