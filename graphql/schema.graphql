@@ -1,3 +1,8 @@
+type Entity {
+    label: String
+    text: String
+}
+
 type News {
     _id: ID!
     title: String
@@ -5,8 +10,15 @@ type News {
     time: String
     url: String
     origin: String
-    img: String
+    imgUrl: String
+    bodysum: String
+    hasgraphimg: Boolean
+    entitiesintitle: [Entity]
+    personlist: [String]
+    orglist: [String]
+    prodlist: [String]
 }
+
 type JHNews {
     _id: ID!
     title: String
