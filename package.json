@@ -17,7 +17,7 @@
     "dotenv": "^8.2.0",
     "graphql-yoga": "^1.18.3",
     "mongoose": "^5.9.7",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^3.1.1"
   },
   "scripts": {
     "build": "babel index.js -d dist && babel graphql/*js -d dist/graphql && babel graphql/models/*.js -d dist/graphql/models",
